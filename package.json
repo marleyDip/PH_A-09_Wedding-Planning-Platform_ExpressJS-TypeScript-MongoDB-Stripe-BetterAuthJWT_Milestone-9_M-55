@@ -1,0 +1,54 @@
+{
+  "name": "wedding-plan-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WedPlan REST API built with Node.js, Express 5, TypeScript, MongoDB, Stripe, and Better Auth JWT verification.",
+  "keywords": [
+    "wedplan",
+    "wedding-planner",
+    "rest-api",
+    "nodejs",
+    "express",
+    "typescript",
+    "mongodb",
+    "stripe",
+    "better-auth"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "start": "node --enable-source-maps dist/index.js",
+    "clean": "node --input-type=module -e \"import { rmSync } from 'node:fs'; rmSync('dist', { recursive: true, force: true })\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "check": "npm run typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "make-admin": "tsx scripts/make-admin.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.5",
+    "helmet": "^8.3.0",
+    "jose": "^6.2.18",
+    "mongodb": "^7.9.1",
+    "morgan": "^1.12.1",
+    "stripe": "^23.2.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^26.6.6",
+    "prettier": "^3.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
