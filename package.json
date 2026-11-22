@@ -27,8 +27,7 @@
     "check": "npm run typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "make-admin": "tsx scripts/make-admin.ts",
-    "diagnose:types": "node -e \"console.log('Node:', process.version); console.log('Typescript:', require.resolve('typescript')); console.log('Node types:', require.resolve('@types/node/package.json'))\""
+    "make-admin": "tsx scripts/make-admin.ts"
   },
   "dependencies": {
     "cors": "^2.8.6",
