@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    /* Project Structure */
     "rootDir": "src",
     "outDir": "dist",
-    /* Runtime Environment */
     "target": "ES2024",
     "lib": [
       "ES2024"
@@ -13,12 +11,10 @@
     "types": [
       "node"
     ],
-    /* JavaScript Output */
     "sourceMap": true,
     "declaration": false,
     "declarationMap": false,
     "noEmitOnError": true,
-    /* Strict Type Checking */
     "strict": true,
     "noImplicitReturns": true,
     "noImplicitOverride": true,
@@ -28,16 +24,13 @@
     "exactOptionalPropertyTypes": true,
     "noPropertyAccessFromIndexSignature": true,
     "useUnknownInCatchVariables": true,
-    /* Module Safety */
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noUncheckedSideEffectImports": true,
-    /* Code Quality */
     "forceConsistentCasingInFileNames": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    /* Compatibility */
     "skipLibCheck": true
   },
   "include": [
