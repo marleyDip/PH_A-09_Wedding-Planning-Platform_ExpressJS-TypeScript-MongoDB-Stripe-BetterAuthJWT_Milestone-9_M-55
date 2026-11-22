@@ -1,6 +1,6 @@
 import { MongoClient, ObjectId } from "mongodb";
 
-import type { Collection, Db, Filter, IndexDescription } from "mongodb";
+import type { Collection, Db, Filter, IndexDescription, WithId } from "mongodb";
 
 import type { BookingStatus, ServiceStatus } from "./constants.js";
 
@@ -23,17 +23,20 @@ export interface UserDoc {
   updatedAt?: Date;
 }
 
-export interface ServiceDoc {
-  _id: ObjectId;
+// Fields stored in a service document
+export interface ServiceFields {
+  // _id: ObjectId;
   vendorId: string;
   serviceName: string;
   category: string;
   description: string;
   price: number;
   priceType: string;
+  // priceType: "per day" | "per event" | "per package" | "per person";
   location: string;
   images: string[];
   status: ServiceStatus;
+  //  status: "pending" | "approved" | "rejected";
   isActive: boolean;
   rating: number;
   reviewCount: number;
@@ -42,8 +45,12 @@ export interface ServiceDoc {
   reviewedAt?: Date;
 }
 
-export interface BookingDoc {
-  _id: ObjectId;
+// Complete MongoDB document, including _id
+export type ServiceDoc = WithId<ServiceFields>;
+
+// Fields stored in a booking document
+export interface BookingFields {
+  // _id: ObjectId;
   serviceId: string;
   vendorId: string;
   customerId: string;
@@ -55,6 +62,9 @@ export interface BookingDoc {
   respondedAt?: Date;
   cancelledAt?: Date;
 }
+
+// Complete MongoDB document, including _id
+export type BookingDoc = WithId<BookingFields>;
 
 export interface TransactionDoc {
   _id: ObjectId;
@@ -244,12 +254,12 @@ export const cols = {
     return getDb().collection(env.SESSIONS_COLLECTION);
   },
 
-  get services(): Collection<ServiceDoc> {
-    return getDb().collection<ServiceDoc>("services");
+  get services(): Collection<ServiceFields> {
+    return getDb().collection<ServiceFields>("services");
   },
 
-  get bookings(): Collection<BookingDoc> {
-    return getDb().collection<BookingDoc>("bookings");
+  get bookings(): Collection<BookingFields> {
+    return getDb().collection<BookingFields>("bookings");
   },
 
   get transactions(): Collection<TransactionDoc> {
