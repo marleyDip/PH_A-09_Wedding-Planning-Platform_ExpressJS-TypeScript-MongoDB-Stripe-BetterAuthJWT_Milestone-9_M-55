@@ -63,150 +63,7 @@ and Stripe payment integration.
 
 ![WedPlan System Architecture](./docs/wedplan-system-architecture.png)
 
-```drawio
-<mxfile>
-  <diagram id="mbMjz5x2ZYaA0oEjb9oH" name="Page-1">
-    <mxGraphModel dx="1096" dy="746" grid="1" gridSize="10" guides="1" tooltips="0" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart TB\r\n    CLIENT[\&quot;Frontend Application\&quot;]\r\n    API[\&quot;Express 5 REST API\&quot;]\r\n    AUTH[\&quot;Authentication &amp; Authorization\&quot;]\r\n    ROUTES[\&quot;Route Layer\&quot;]\r\n    CONTROLLERS[\&quot;Controller Layer\&quot;]\r\n    SERVICES[\&quot;Service Layer\&quot;]\r\n    DB[(\&quot;MongoDB\&quot;)]\r\n    BA[\&quot;Better Auth\&quot;]\r\n    STRIPE[\&quot;Stripe\&quot;]\r\n\r\n    CLIENT --&gt; API\r\n    BA -.-&gt; AUTH\r\n    API --&gt; AUTH\r\n    AUTH --&gt; ROUTES\r\n    ROUTES --&gt; CONTROLLERS\r\n    CONTROLLERS --&gt; SERVICES\r\n    SERVICES --&gt; DB\r\n    SERVICES &lt;--&gt; STRIPE\r\n    STRIPE --&gt;|\&quot;Webhooks\&quot;| API&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="20">
-          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
-            <mxGeometry as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Frontend Application" mermaidId="n:CLIENT" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Frontend Application" id="2">
-          <mxCell parent="20" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="54" width="210" x="244" y="10" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Express 5 REST API" mermaidId="n:API" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Express 5 REST API" id="3">
-          <mxCell parent="20" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="54" width="193" x="252" y="114" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Authentication &amp; Authorization" mermaidId="n:AUTH" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Authentication &amp; Authorization" id="4">
-          <mxCell parent="20" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="54" width="283" x="10" y="218" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Route Layer" mermaidId="n:ROUTES" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Route Layer" id="5">
-          <mxCell parent="20" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="54" width="145" x="79" y="322" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Controller Layer" mermaidId="n:CONTROLLERS" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Controller Layer" id="6">
-          <mxCell parent="20" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="54" width="177" x="63" y="445" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Service Layer" mermaidId="n:SERVICES" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Service Layer" id="7">
-          <mxCell parent="20" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="54" width="156" x="74" y="549" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="MongoDB" mermaidId="n:DB" mermaidBaseStyle="html=1;shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=1;whiteSpace=wrap;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MongoDB" id="8">
-          <mxCell parent="20" style="html=1;shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=1;whiteSpace=wrap;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="67" width="79" x="102" y="653" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Better Auth" mermaidId="n:BA" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Better Auth" id="9">
-          <mxCell parent="20" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="54" width="143" x="59" y="114" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Stripe" mermaidId="n:STRIPE" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Stripe" id="10">
-          <mxCell parent="20" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-            <mxGeometry height="54" width="102" x="298" y="660" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="" mermaidId="e:CLIENT-&gt;API#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="11">
-          <mxCell edge="1" parent="20" source="2" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="3">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="" mermaidId="e:BA-&gt;AUTH#0" mermaidBaseStyle="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.46;entryY=0;" mermaidBaseValue="" id="12">
-          <mxCell edge="1" parent="20" source="9" style="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.46;entryY=0;" target="4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="131" y="193" />
-              </Array>
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="" mermaidId="e:API-&gt;AUTH#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.26;exitY=1;entryX=0.7;entryY=0;" mermaidBaseValue="" id="13">
-          <mxCell edge="1" parent="20" source="3" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.26;exitY=1;entryX=0.7;entryY=0;" target="4">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="261" y="193" />
-              </Array>
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="" mermaidId="e:AUTH-&gt;ROUTES#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="14">
-          <mxCell edge="1" parent="20" source="4" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="5">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="" mermaidId="e:ROUTES-&gt;CONTROLLERS#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="15">
-          <mxCell edge="1" parent="20" source="5" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="6">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="" mermaidId="e:CONTROLLERS-&gt;SERVICES#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="16">
-          <mxCell edge="1" parent="20" source="6" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="7">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points" />
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="" mermaidId="e:SERVICES-&gt;DB#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.46;exitY=1;entryX=0.51;entryY=0;" mermaidBaseValue="" id="17">
-          <mxCell edge="1" parent="20" source="7" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.46;exitY=1;entryX=0.51;entryY=0;" target="8">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="142" y="628" />
-              </Array>
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="" mermaidId="e:SERVICES-&gt;STRIPE#0" mermaidBaseStyle="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.86;exitY=1;entryX=0.1;entryY=0;" mermaidBaseValue="" id="18">
-          <mxCell edge="1" parent="20" source="7" style="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.86;exitY=1;entryX=0.1;entryY=0;" target="10">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="261" y="628" />
-              </Array>
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Webhooks" mermaidId="e:STRIPE-&gt;API#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.54;exitY=0;entryX=0.53;entryY=1;" mermaidBaseValue="Webhooks" id="19">
-          <mxCell edge="1" parent="20" source="10" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.54;exitY=0;entryX=0.53;entryY=1;" target="3">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="359" y="628" />
-                <mxPoint x="359" y="576" />
-                <mxPoint x="359" y="524" />
-                <mxPoint x="359" y="472" />
-                <mxPoint x="359" y="411" />
-                <mxPoint x="359" y="349" />
-                <mxPoint x="359" y="297" />
-                <mxPoint x="359" y="245" />
-                <mxPoint x="359" y="193" />
-              </Array>
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-      </root>
-    </mxGraphModel>
-  </diagram>
-</mxfile>
-
-```
+![WedPlan System Diagram](./docs/mermaid-diagram.png)
 
 **My recommendation:** Use the first, more detailed diagram as your README architecture visualization. It communicates your backend's modular design and integrations much better than a simple frontend-to-database diagram.
 
@@ -231,8 +88,8 @@ wedding-plan-server/
 │   │   ├── user.controller.ts
 │   │   ├── admin.controller.ts
 │   │   ├── booking.controller.ts
-│   │   ├── payment.controller.ts  HTTP checkout response and payment history response
 │   │   ├── service.controller.ts
+│   │   ├── payment.controller.ts
 │   │   └── stripe-webhook.controller.ts
 │   │
 │   ├── middlewares/
@@ -243,9 +100,9 @@ wedding-plan-server/
 │   ├── routes/
 │   │   ├── admin.routes.ts
 │   │   ├── booking.routes.ts
-│   │   ├── payment.routes.ts  // Authentication, vendor role, rate limiter, route registration
-│   │   ├── service.routes.ts
+│   │   ├── payment.routes.ts
 │   │   ├── stripe-webhook.routes.ts
+│   │   ├── service.routes.ts
 │   │   ├── users.routes.ts
 │   │   ├── index.ts
 │   │   └── content.routes.ts
@@ -421,35 +278,285 @@ The API is organized into resource-based route modules.
 
 ### Content API
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| GET | `/categories` | Retrieve service categories |
-| GET | `/testimonials` | Retrieve testimonials |
+| Method | Endpoint | Access | Description |
+| --- | --- | --- | --- |
+| GET | `/categories` | Public | Retrieve service categories |
+| GET | `/testimonials` | Public | Retrieve testimonials |
 
 ### Services API
 
-Provides service-related operations, including service creation, retrieval, updates, and management.
+The Services API allows vendors to create, manage, update, and delete their wedding-related services. Public users can browse available services, view service details, and access service statistics. Authenticated vendors can manage only their own services and update their availability.
+
+### Services Base Endpoint
+
+`/services`
+
+### Services API Endpoints
+
+| Method | Endpoint | Access | Description |
+| --- | --- | --- | --- |
+| GET | `/services` | Public | Retrieve all available services. |
+| GET | `/services/stats` | Public | Retrieve service statistics and summary information. |
+| GET | `/services/:id` | Public | Retrieve detailed information about a specific service. |
+| GET | `/services/mine` | Vendor | Retrieve all services created by the authenticated vendor. |
+| GET | `/services/mine/:id` | Vendor | Retrieve a specific service owned by the authenticated vendor. |
+| POST | `/services` | Vendor | Create a new wedding service. |
+| PATCH | `/services/:id` | Vendor | Update an existing service owned by the authenticated vendor. |
+| PATCH | `/services/:id/availability` | Vendor | Update the availability of a specific service. |
+| DELETE | `/services/:id` | Vendor | Delete a service owned by the authenticated vendor. |
+
+### Services Access Control
+
+- **Public:** Anyone can browse services, view service details, and access service statistics without authentication.
+- **Vendor:** Requires an authenticated vendor account. Vendors can manage only their own services.
+- **Ownership Verification:** Protected service operations verify that the requested service belongs to the authenticated vendor.
+
+### Services Main Features
+
+- Browse and retrieve available wedding services.
+- View detailed information about individual services.
+- Access service statistics.
+- Create new wedding service listings.
+- Update service information and availability.
+- Retrieve vendor-specific service listings.
+- Delete services owned by the authenticated vendor.
+
+### Service Example Requests
+
+#### Get all services
+
+```http
+GET /services
+```
+
+#### Get a specific service
+
+```http
+GET /services/:id
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+#### Create a service
+
+```http
+POST /services
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+#### Update a service
+
+```http
+PATCH /services/:id
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+#### Update service availability
+
+```http
+PATCH /services/:id/availability
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+#### Delete a service
+
+```http
+DELETE /services/:id
+Authorization: Bearer <token>
+```
+
+> **Note:** Vendor-only endpoints require a valid authentication token and vendor authorization. Request bodies must follow the corresponding service validation schemas.
 
 ### Bookings API
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST | `/bookings` | Create a booking |
-| GET | `/bookings/check` | Check booking availability |
-| GET | `/bookings/mine` | Retrieve customer bookings |
-| GET | `/bookings/vendor` | Retrieve vendor bookings |
-| PATCH | `/bookings/:id/cancel` | Cancel a customer's pending booking |
-| PATCH | `/bookings/:id/status` | Update a vendor's booking status |
+The Bookings API manages the wedding service booking process between customers and vendors. Customers can create bookings, check service availability, view their booking history, and cancel pending bookings. Vendors can view booking requests and update their booking statuses.
+
+### Bookings Base Endpoint
+
+`/bookings`
+
+### Bookings API Endpoints
+
+| Method | Endpoint | Access | Description |
+| --- | --- | --- | --- |
+| POST | `/bookings` | Customer | Create a booking for a wedding service. |
+| GET | `/bookings/check` | Public | Check the availability of a service for a requested event date. |
+| GET | `/bookings/mine` | Customer | Retrieve bookings created by the authenticated customer. |
+| GET | `/bookings/vendor` | Vendor | Retrieve booking requests received by the authenticated vendor. |
+| PATCH | `/bookings/:id/cancel` | Customer | Cancel the customer's own pending booking. |
+| PATCH | `/bookings/:id/status` | Vendor | Update the status of a booking request. |
+
+### Bookings Access Control
+
+- **Public:** Anyone can check service booking availability.
+- **Customer:** Requires an authenticated customer account. Customers can create bookings, view their own bookings, and cancel their own pending bookings.
+- **Vendor:** Requires an authenticated vendor account. Vendors can view bookings associated with their services and update booking statuses.
+- **Ownership Verification:** Protected operations verify that the authenticated user owns the relevant booking or has permission to manage it.
+
+### Bookings Main Features
+
+- Create wedding service bookings.
+- Check service availability before booking.
+- Retrieve customer-specific booking history.
+- Retrieve vendor-specific booking requests.
+- Cancel pending customer bookings.
+- Update booking statuses from the vendor dashboard.
+- Protect booking operations through authentication and ownership verification.
+
+### Bookings Example Requests
+
+#### Create a Booking
+
+```http
+POST /bookings
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+#### Check Booking Availability
+
+```http
+GET /bookings/check
+```
+
+#### Get My Bookings
+
+```http
+GET /bookings/mine
+Authorization: Bearer <token>
+```
+
+#### Get Vendor Bookings
+
+```http
+GET /bookings/vendor
+Authorization: Bearer <token>
+```
+
+#### Cancel a Booking
+
+```http
+PATCH /bookings/:id/cancel
+Authorization: Bearer <token>
+```
+
+#### Update Booking Status
+
+```http
+PATCH /bookings/:id/status
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+> **Note:** Customer and vendor endpoints require valid authentication and role authorization. Customers can cancel only their own pending bookings, while vendors can update bookings associated with their services. Request bodies and query parameters must follow the corresponding validation schemas.
 
 ### Payments API
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST | `/payments/create-checkout-session` | Create a Stripe Checkout session |
-| GET | `/payments/mine` | Retrieve vendor payment history |
-| POST | `/payments/webhook` | Process Stripe webhook events |
+The Payments API handles vendor subscription payments through Stripe. Vendors can create Stripe Checkout sessions to purchase or upgrade their subscription plans and view their payment history. Stripe sends webhook events to the backend to notify the application about payment status changes.
+
+### Payments Base Endpoint
+
+`/payments`
+
+### Payments API Endpoints
+
+| Method | Endpoint | Access | Description |
+| --- | --- | --- | --- |
+| POST | `/payments/create-checkout-session` | Vendor | Create a Stripe Checkout session for a vendor subscription payment. |
+| GET | `/payments/mine` | Vendor | Retrieve the authenticated vendor's payment and transaction history. |
+| POST | `/payments/webhook` | Stripe Signature | Receive and process Stripe webhook events to update payment and subscription statuses. |
+
+### Payments Access Control
+
+- **Vendor:** Requires an authenticated vendor account. Vendors can create checkout sessions and view only their own payment history.
+- **Stripe Signature:** This endpoint is called by Stripe, not directly by users. Requests are verified using the `STRIPE_WEBHOOK_SECRET` signing secret.
+
+### Payments Features
+
+- Create secure Stripe Checkout sessions.
+- Process vendor subscription payments.
+- Retrieve vendor-specific transaction history.
+- Verify Stripe webhook signatures.
+- Handle payment lifecycle events and synchronize transaction statuses.
+- Update vendor subscription information after successful payment events.
+
+### Payments Example Requests
+
+#### Create Checkout Session
+
+```http
+POST /payments/create-checkout-session
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+#### Get My Payments
+
+```http
+GET /payments/mine
+Authorization: Bearer <token>
+```
+
+#### Stripe Webhook
+
+```http
+POST /payments/webhook
+Content-Type: application/json
+Stripe-Signature: <stripe-signature>
+```
+
+### Stripe Webhook Security
+
+The webhook endpoint verifies incoming requests using Stripe's signature verification mechanism and the configured `STRIPE_WEBHOOK_SECRET`.
+
+**Important implementation details:**
+
+- The webhook route must use the raw request body (`express.raw`) for signature verification.
+- Mount the webhook route before `express.json()` middleware.
+- Never expose Stripe secret keys or webhook signing secrets in frontend code.
+- Process verified webhook events to keep payment and subscription records synchronized.
+
+> **Note:** Vendor endpoints require a valid authentication token and vendor authorization. The webhook endpoint requires a valid Stripe signature instead of vendor authentication.
 
 ### Admin API
+
+The Admin API provides administrative tools for managing the WedPlan platform. Authorized administrators can monitor platform statistics, manage user accounts, review and moderate wedding services, and track payment transactions through a centralized dashboard.
+
+### Admin Base Endpoint
+
+`/admin`
+
+### Admin API Endpoints
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| GET | `/admin/stats` | Retrieve statistics and summary data for the admin dashboard. |
+| GET | `/admin/users` | Retrieve a list of registered users. |
+| PATCH | `/admin/users/:id/block` | Block or unblock a specific user account. |
+| GET | `/admin/services` | Retrieve a list of wedding services across the platform. |
+| PATCH | `/admin/services/:id/status` | Approve or reject a submitted wedding service. |
+| DELETE | `/admin/services/:id` | Delete a specific service from the platform. |
+| GET | `/admin/transactions` | Retrieve payment and transaction records across the platform. |
+
+### Admin Access Control
+
+- **Admin Only:** All endpoints require an authenticated administrator account.
+- **Authentication:** Requests must include a valid authentication token.
+- **Role Authorization:** The backend verifies the user's admin role before allowing access.
+- **Resource Validation:** Operations validate the requested user or service before making changes.
+
+### Admin Main Features
+
+- View platform-wide dashboard statistics.
+- Monitor and manage registered users.
+- Block or unblock user accounts.
+- Review all wedding service listings.
+- Approve or reject vendor-submitted services.
+- Remove inappropriate or unwanted services.
+- Monitor payment transactions and subscription activity.
 
 Provides administrative operations for:
 
@@ -459,7 +566,60 @@ Provides administrative operations for:
 - Service deletion.
 - Transaction listing.
 
-*Note: The endpoint paths above are relative to the corresponding route prefixes. Confirm the final mounted paths in `src/index.ts` and your route files before publishing API documentation.*
+### Admin Example Requests
+
+#### Get Dashboard Statistics
+
+```http
+GET /admin/stats
+Authorization: Bearer <token>
+```
+
+#### Get All Users
+
+```http
+GET /admin/users
+Authorization: Bearer <token>
+```
+
+#### Block or Unblock a User
+
+```http
+PATCH /admin/users/:id/block
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+#### Get All Services
+
+```http
+GET /admin/services
+Authorization: Bearer <token>
+```
+
+#### Approve or Reject a Service
+
+```http
+PATCH /admin/services/:id/status
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+#### Delete a Service
+
+```http
+DELETE /admin/services/:id
+Authorization: Bearer <token>
+```
+
+#### Get All Transactions
+
+```http
+GET /admin/transactions
+Authorization: Bearer <token>
+```
+
+> **Note:** All Admin API endpoints are protected by authentication and admin role authorization. Only authorized administrators can access these operations.
 
 ## Authentication and Authorization
 
@@ -575,3 +735,48 @@ Vercel manages the serverless runtime and port. Do not hardcode a production `PO
 ## License
 
 This project was developed as part of a full-stack web engineering project.
+
+## 👨‍💻 Author
+
+### ✨ Md. Sofian Hasan ✨
+
+> Software Engineer | Full-Stack (MERN / PERN) Developer
+
+[![🌐 Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Website-0A0A0A?style=for-the-badge)](https://marleydip.netlify.app/)
+&nbsp;
+[![💻 GitHub](https://img.shields.io/badge/💻_GitHub-View_Profile-181717?style=for-the-badge&logo=github)](https://github.com/marleyDip)
+
+Passionate about building **modern, scalable, and user-focused web applications** while continuously strengthening ***JavaScript, TypeScript, problem-solving, and full-stack development skills***.
+
+### 🚀 Tech Focus
+
+![Tech Stack](https://skillicons.dev/icons?i=js,ts,react,nextjs,tailwind,nodejs,express,nestjs,mongodb,postgres)
+
+![MERN Stack](https://img.shields.io/badge/MERN-Stack-61DAFB?style=for-the-badge)
+![PERN Stack](https://img.shields.io/badge/PERN-Stack-336791?style=for-the-badge)
+
+---
+
+## 📄 License
+
+This project is developed for educational and learning purposes. You may adapt and extend it according to your requirements.
+
+---
+
+## 🙏 Acknowledgements & Learning Credits
+
+### Special Thanks to Programming Hero
+
+This project was developed as part of my learning journey through the **AI-Driven Full Stack Web Engineering Course Level-1 Batch-14**.
+
+I would like to express my sincere gratitude to the entire **Programming Hero team, instructors, mentors, and community** for providing structured learning resources, practical guidance, and an encouraging environment to grow as a developer.
+
+Throughout this journey, I have had the opportunity to strengthen my understanding of modern web development concepts, explore full-stack application architecture, and apply my knowledge by building real-world projects.
+
+**WedPlan represents more than just a course assignment - it is an opportunity to transform the concepts I have learned into a practical, functional application.**
+
+Special thanks for inspiring me to keep learning, experimenting, solving problems, and building better software.
+
+**Learning never stops. Every project is another step forward.** 🚀
+
+[![Programming Hero](https://img.shields.io/badge/Programming%20Hero-Visit%20My%20Profile-FF4B4B?style=for-the-badge)](https://codelab.programming-hero.com/u/marleydip)
